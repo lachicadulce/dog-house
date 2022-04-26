@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//clearfix: footer가 안보였던 오류 수정
+.cf:after {
+    content: "";
+    clear: both;
+    display: block;
+}

@@ -1,0 +1,53 @@
+header {
+    height: 200px;
+    background: #f46075 url(../img/nav2.png) no-repeat 90% 50%;
+    border-top: 1px solid transparent; //투명으로 줄하나 넣기
+
+    h1 {
+        color: #fff;
+        margin-left: 70px;
+        margin-top: 50px;
+    }
+}
+
+nav {
+    height: 65px;
+    background-color: #ddd;
+
+    ul {
+        list-style: none;
+
+        >li {
+            float: left;
+            margin-top: 10px;
+            position: relative; //자식의 포지션이 오게끔 설정 static이면 더 상위로 올라가버림
+
+            a {
+                display: block; //인라인 요소를 너비높이를 주기위해
+                width: 225px;
+                height: 40px;
+                line-height: 40px; //줄간격 높이와 맞추면 수직정렬
+                color: #333;
+                text-decoration: none; //밑줄 없애기(a는 밑줄이 기본)
+                text-align: center;
+
+                //마우스 올렸을 때 색상 바꾸기 a:hover
+                &:hover {
+                    background: beige;
+                }
+            }
+            ul {
+                position: absolute; //*부모기준 따라가기 위해서
+                background: #ddd;
+                height: 0px;
+                transition: height .5s; //높이가 변할때 애니메이션
+                overflow: hidden;
+            }
+            &:hover {
+                ul {
+                    height: 170px;
+                }
+            }
+        }
+    }
+}
